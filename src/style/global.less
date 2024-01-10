@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.font-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.font-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.font-body {
+  font-size: 0.8rem;
+}
+
+.button(@background-color) {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: @background-color;
+  color: #fff;
+  cursor: pointer
+}
+
+.button-outline(@outline-color) {
+  padding: 10px;
+  border-radius: 5px;
+  outline: 1px solid @outline-color;
+  color: #fff;
+  cursor: pointer
+}
+
+.invisible {
+  display: none;
+}
+
+.answered {
+  background-color: darkgray;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.text-center {
+  text-align: center;
+}
