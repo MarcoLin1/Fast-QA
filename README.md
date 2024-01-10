@@ -1,32 +1,39 @@
-# 2021-10-21
+# FAST QA
 
 ## Spec
+
 Integrate [opentdb](https://opentdb.com/) api via Vue
 
 ## Project setup
+
 ```
-yarn install
+pnpm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn serve
+pnpm serve
 ```
 
 ### Compiles and minifies for production
+
 ```
-yarn build
+pnpm build
 ```
 
 ### Run your unit tests
+
 ```
-yarn test:unit
+pnpm test:unit
 ```
 
 ### Lints and fixes files
+
 ```
-yarn lint
+pnpm lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
