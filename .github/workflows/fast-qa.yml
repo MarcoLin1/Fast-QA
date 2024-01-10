@@ -1,0 +1,41 @@
+name: FAST QA deploy
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - FAST-QA/**
+  push:
+    branches:
+      - main
+    paths:
+      - FAST-QA/**
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository code
+        uses: actions/checkout@v3
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: cache pnpm module
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: install dependencies
+        shell: bash
+        run: pnpm install
+      - name: use lint action
+        shell: bash
+        run: pnpm run lint
